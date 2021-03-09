@@ -13,6 +13,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/404', function () {
+    return view('404');
 });
+
+Route::get('/about-us', function () {
+    return view('about-us');
+});
+
+Route::get('/blog', function () {
+    return view('blog');
+});
+
+Route::get('/', function () {
+    return view('index');
+});
+
+Route::get('/faq', function () {
+    return view('faq');
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
